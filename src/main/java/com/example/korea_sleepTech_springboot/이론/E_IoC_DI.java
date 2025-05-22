@@ -9,7 +9,7 @@ public class E_IoC_DI {
     * 제어의 역전(IoC) & 의존성 주입(DI)
     * */
 
-    // 1. 전통적인 자바 프로그래밍 방식
+    // 1. 전동적인 자바 프로그래밍 방식
     class Book1 {
         private String title;
 
@@ -43,9 +43,10 @@ public class E_IoC_DI {
 
     // 2. 스프링 제어의 역전 프로그래밍 방식
     @Component
-            // : 스프링 컨테이너가 해당 객체를 관리하도록 설정
-            // cf) 스프링 빈(Bean)
-            // : 스프링 컨테이너에 의해 관리되는 재사용 가능한 소프트웨어 컴포넌트
+    // : 스프링 컨테이너가 해당 객체를 관리하도록 설정
+
+    // cf) 스프링 빈(Bean)
+    // : 스프링 컨테이너에 의해 관리되는 재사용 가능한 소프트웨어 컴포넌트
     class Book2 {
         private String title;
 
@@ -58,13 +59,13 @@ public class E_IoC_DI {
         }
     }
 
-    @Component // 해당 클래스를 스프링 빈으로 등록
+    @Component // 해당 클래스를 스프링 빈으로 등록!
     class BookStore2 {
         private Book2 book;
 
         // 스프링이 Book2 객체를 생성해서 자동으로 BookStore2에 넣어줌 (매개변수로 전달)
         // : 개발자가 직접 new Book2()를 하지 않고
-        //  , 스프링 컨테이너가 객체를 스스로 만들어서 '주입'
+        //   , 스프링 컨테이너가 객체를 스스로 만들어서 '주입'
         @Autowired // 스프링 컨테이너에서 해당 타입의 빈을 찾아 주입하는 어노테이션
         public BookStore2(Book2 book) {
             this.book = book;
@@ -97,13 +98,9 @@ public class E_IoC_DI {
 * - 개발자에 의해 명시적으로 정의 | 스프링에 의해 자동으로 감지되어 관리
 * - 서비스, 리포지토리, 컨트롤러 등의 역할을 수행하는 컴포넌트로 사용
 *
-* cf) 빈의 경우 클래스명의 첫 글자를 소문자로 바꾸어 관리 (Book, BookStore 클래스 >> book, bookStore 빈)
+* cf) 빈의 경우 클래스명의 첫글자를 소문자로 바꾸어 관리 (Book, BookStore 클래스 >> book, bookStore 빈)
 *
 * +) 빈 선언 방법
 * : @Component, @Bean 애너테이션 사용
 * + @Service, @Repository 등 내부에 @Component가 포함
-*
-*
-*
-*
 * */

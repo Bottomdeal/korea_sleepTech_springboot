@@ -1,6 +1,6 @@
 package com.example.korea_sleepTech_springboot.이론;
 
-public class Servlet_SpringBoot {
+public class C_Servlet_SpringBoot {
     /*
     * 1. 웹 서블릿(Servlet)에서 HTTP 통신
     *
@@ -25,7 +25,7 @@ public class Servlet_SpringBoot {
     *
     * 스프링부트
     *   : 서블릿을 쉽게 작동하게 해주는 프레임워크
-    *   - Controller라는 클래스를 만들어서 HTTP 요청을 쉽게 처리
+    *   - Controller 라는 클래스를 만들어서 HTTP 요청을 쉽게 처리
     *
     *   1) HTTP 요청 >> 스프링부트가 자동으로 컨트롤러 메서드로 연결
     *   2) 메서드의 '요청 파라미터'를 받아 처리
@@ -34,6 +34,5 @@ public class Servlet_SpringBoot {
     *
     *   cf) 서블릿에서는 직접 request와 response를 조작
     *       스프링부트에서는 @RequestParam, @GetMapping 등의 애너테이션을 사용하여 간단한 HTTP 통신 처리
-    *
     * */
 }
